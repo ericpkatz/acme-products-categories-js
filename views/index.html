@@ -1,0 +1,47 @@
+{% extends './layout.html' %}
+{% block content %}
+<h2>Home</h2>
+<div class='well'>
+  Welcome to Acme Product-Categories JS!!!
+</div>
+<div class='list-group'>
+  <li class='list-group-item'>
+    Name your repo acme-products-categories-js
+  </li>
+  <li class='list-group-item'>
+    Deploy it!
+  </li>
+  <li class='list-group-item'>
+    Add me as collaborator
+  </li>
+  <li class='list-group-item'>
+    <pre>
+- server.js (~35 lines)
+  - GET '/'
+- db.js (~60 lines)
+  - getCategories,
+  - getCategory,
+  - insertCategory,
+  - deleteCategory,
+  - insertProduct,
+  - deleteProduct
+- routes
+  - categories.js (~40 lines)
+    - GET /categories
+
+    - POST /categories
+    - DELETE /categories/:id
+
+    - GET /categories/:id
+
+    - POST /categories/:categoryId/products
+    - DELETE /categories/:categoryId/products/:id
+- views
+  - layout.html (~25 lines)
+  - index.html
+  - categories.html (~25 lines)
+  - category.html (~25 lines)
+    </pre>
+  </li>
+</div>
+{% endblock %}

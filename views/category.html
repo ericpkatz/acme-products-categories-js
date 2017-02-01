@@ -1,0 +1,25 @@
+{% extends './layout.html' %}
+{% block content %}
+<h2>Category: {{ category.name }}</h2>
+<a href='/categories'><span class='glyphicon glyphicon-menu-left'></span>All Categories</a>
+<form class='well' action='/categories/{{ category.id}}/products' method='POST'>
+  <div class='form-group'>
+    <input class='form-control' name='name' placeholder='add a product...'/>
+  </div>
+  <button class='btn btn-primary'><span class='glyphicon glyphicon-save'></span>Save</button>
+</form>
+<ul class='list-group'>
+  {% for product in category.products %}
+    <li class='list-group-item'>
+      {{ product.name }}
+      <form class='pull-right' style='display:inline' action='/categories/{{category.id}}/products/{{product.id}}?_method=DELETE' method='POST'>
+        <button class='btn btn-warning'>
+          <span class='glyphicon glyphicon-trash'></span>
+          Delete
+        </button>
+      </form>
+      <br clear='all' />
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}
